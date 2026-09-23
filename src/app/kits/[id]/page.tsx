@@ -63,6 +63,13 @@ export default function KitDetailPage({ params }: { params: { id: string } }) {
 
   const currentCard = sortedPracticeCards[practiceIndex] || (kit?.flashcards[0]);
 
+  const getAuthHeaders = () => {
+    const token = typeof window !== 'undefined' ? localStorage.getItem('prepkit_token') : null;
+    const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+    return headers;
+  };
+
   // Save changes to backend
   const saveKitChanges = async (updatedKit: Kit) => {
     setKit(updatedKit);
@@ -70,7 +77,7 @@ export default function KitDetailPage({ params }: { params: { id: string } }) {
     try {
       await fetch(`/api/kits/${params.id}`, {
         method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ kit: updatedKit }),
       });
     } catch (err) {
@@ -86,7 +93,7 @@ export default function KitDetailPage({ params }: { params: { id: string } }) {
     try {
       const res = await fetch(`/api/kits/${params.id}/regenerate`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ target: 'company_brief' }),
       });
       const data = await res.json();
@@ -188,7 +195,7 @@ export default function KitDetailPage({ params }: { params: { id: string } }) {
     try {
       await fetch(`/api/kits/${params.id}/practice`, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: getAuthHeaders(),
         body: JSON.stringify({ flashcardId, confidence }),
       });
     } catch (err) {

@@ -44,7 +44,11 @@ export default function DashboardPage() {
     if (!confirm('Are you sure you want to delete this interview kit?')) return;
 
     try {
-      const res = await fetch(`/api/kits/${id}`, { method: 'DELETE' });
+      const token = typeof window !== 'undefined' ? localStorage.getItem('prepkit_token') : null;
+      const headers: Record<string, string> = {};
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
+      const res = await fetch(`/api/kits/${id}`, { method: 'DELETE', headers });
       if (res.ok) {
         setKits(kits.filter(k => k.id !== id));
       }

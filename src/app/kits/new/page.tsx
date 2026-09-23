@@ -51,9 +51,13 @@ export default function CreateKitPage() {
     }, 1800);
 
     try {
+      const token = typeof window !== 'undefined' ? localStorage.getItem('prepkit_token') : null;
+      const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
       const res = await fetch('/api/kits', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers,
         body: JSON.stringify({
           jobDescription,
           companyUrl,
@@ -97,6 +101,10 @@ export default function CreateKitPage() {
       setLoading(true);
       setBatchProgress({ current: 0, total: items.length });
 
+      const token = typeof window !== 'undefined' ? localStorage.getItem('prepkit_token') : null;
+      const headers: Record<string, string> = { 'Content-Type': 'application/json' };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
+
       for (let i = 0; i < items.length; i++) {
         const item = items[i];
         const jd = item.jd || item.jobDescription || item.job_description || '';
@@ -112,7 +120,7 @@ export default function CreateKitPage() {
 
         await fetch('/api/kits', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers,
           body: JSON.stringify({
             jobDescription: jd,
             companyUrl: url,
