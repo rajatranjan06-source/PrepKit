@@ -1,0 +1,456 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-09-22T22:51:13.827Z",
+  "kits": [
+    {
+      "id": "case-01",
+      "status": "ok",
+      "kit": {
+        "source": {
+          "company": "Example",
+          "company_url": "https://example.com/acme",
+          "role": "Senior Software Engineer",
+          "location": "Remote / On-site",
+          "jd_chars": 234,
+          "researched_at": "2026-09-22T22:51:02.783Z",
+          "pages_used": [
+            "https://example.com/acme"
+          ]
+        },
+        "company_brief": {
+          "summary": "Leading technology firm engineering modern, highly available cloud applications and AI workflow automation platforms.",
+          "what_they_do": "Develops enterprise cloud solutions, developer tools, and data processing automation software designed for scale.",
+          "sources": [
+            "https://example.com/careers",
+            "https://example.com/about"
+          ]
+        },
+        "role": {
+          "title": "Senior Software Engineer",
+          "seniority": "Senior",
+          "responsibilities": [
+            "Design and implement scalable RESTful and GraphQL web services",
+            "Architect high-concurrency Node.js and TypeScript backends",
+            "Collaborate with product and design teams to deliver high quality features"
+          ],
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "5+ years experience with Node.js and TypeScript",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r2",
+              "text": "Strong knowledge of MongoDB database modeling and indexing",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r3",
+              "text": "Experience with web scraping, crawling, and API security",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r4",
+              "text": "Cross-functional communication and technical leadership",
+              "kind": "behavioural",
+              "priority": "must"
+            },
+            {
+              "id": "r5",
+              "text": "Familiarity with React and Next.js frontend development",
+              "kind": "technical",
+              "priority": "nice"
+            },
+            {
+              "id": "r6",
+              "text": "Experience with Docker, CI/CD pipelines, and cloud deployments",
+              "kind": "domain",
+              "priority": "nice"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "q1",
+            "requirement_ids": [
+              "r1",
+              "r2"
+            ],
+            "category": "technical",
+            "prompt": "How would you design a rate-limiting middleware in Node.js for MongoDB write spikes?",
+            "answer_outline": "Discuss sliding window rate limiter, Redis/MongoDB token bucket, handling HTTP 429 backoff, and async processing.",
+            "difficulty": 3,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q2",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "technical",
+            "prompt": "What measures do you take to prevent SSRF vulnerabilities when crawling untrusted external URLs?",
+            "answer_outline": "Validate URL protocols, reject internal IPv4/IPv6 ranges (10.0.0.0/8, 127.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), block metadata endpoints, and enforce DNS resolution checks.",
+            "difficulty": 2,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q3",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a situation where you had to resolve a technical disagreement between engineering and product teams.",
+            "answer_outline": "Use STAR method: explain context, conflicting priorities, how data-driven trade-off analysis was presented, and agreed resolution.",
+            "difficulty": 2,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q4",
+            "requirement_ids": [
+              "r1",
+              "r2",
+              "r6"
+            ],
+            "category": "system-design",
+            "prompt": "Design an asynchronous distributed background job processor for long-running AI kit generations.",
+            "answer_outline": "Cover job queue architecture, message broker (RabbitMQ/Redis/BullMQ), idempotency, worker pool scaling, status polling, and exponential backoff retry mechanisms.",
+            "difficulty": 3,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q5",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "company-fit",
+            "prompt": "Why are you interested in joining our engineering team and how do you align with our technical culture?",
+            "answer_outline": "Express alignment with engineering practices, customer focus, continuous learning mindset, and contribution to technical roadmap.",
+            "difficulty": 1,
+            "origin": "generated",
+            "pinned": false
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "f1",
+            "front": "What is SSRF and how do you prevent it in automated crawlers?",
+            "back": "Server-Side Request Forgery occurs when an application fetches remote resources without validating the destination. Prevent it by restricting protocols (HTTP/HTTPS), validating target IPs against private network CIDR blocks, blocking loopback addresses, and using standard timeouts.",
+            "requirement_ids": [
+              "r3"
+            ],
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "f2",
+            "front": "How do compound indexes optimize MongoDB queries?",
+            "back": "Compound indexes support queries that match multiple fields. Field order matters according to the Equality, Sort, Range (ESR) rule to maximize index selectivity and avoid in-memory sorting.",
+            "requirement_ids": [
+              "r2"
+            ],
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "f3",
+            "front": "What is the STAR method for behavioural interview questions?",
+            "back": "STAR stands for Situation (context), Task (responsibility), Action (specific steps you took), and Result (quantifiable outcome and learning).",
+            "requirement_ids": [
+              "r4"
+            ],
+            "origin": "generated",
+            "pinned": false
+          }
+        ],
+        "schedule": {
+          "days_available": 5,
+          "days": [
+            {
+              "day": 1,
+              "focus": "Day 1: System Design",
+              "question_ids": [
+                "q4"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 2,
+              "focus": "Day 2: Technical Depth",
+              "question_ids": [
+                "q1"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 3,
+              "focus": "Day 3: Technical Depth",
+              "question_ids": [
+                "q2"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 4,
+              "focus": "Day 4: Behavioural & STAR",
+              "question_ids": [
+                "q3"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 5,
+              "focus": "Day 5: Company Fit",
+              "question_ids": [
+                "q5"
+              ],
+              "minutes": 45
+            }
+          ]
+        },
+        "coverage": {
+          "uncovered_requirement_ids": [],
+          "passes": 1
+        }
+      },
+      "error": null
+    },
+    {
+      "id": "case-02",
+      "status": "ok",
+      "kit": {
+        "source": {
+          "company": "Example",
+          "company_url": "https://example.com/techcorp",
+          "role": "Senior Software Engineer",
+          "location": "Remote / On-site",
+          "jd_chars": 186,
+          "researched_at": "2026-09-22T22:51:13.827Z",
+          "pages_used": [
+            "https://example.com/techcorp"
+          ]
+        },
+        "company_brief": {
+          "summary": "Leading technology firm engineering modern, highly available cloud applications and AI workflow automation platforms.",
+          "what_they_do": "Develops enterprise cloud solutions, developer tools, and data processing automation software designed for scale.",
+          "sources": [
+            "https://example.com/careers",
+            "https://example.com/about"
+          ]
+        },
+        "role": {
+          "title": "Senior Software Engineer",
+          "seniority": "Senior",
+          "responsibilities": [
+            "Design and implement scalable RESTful and GraphQL web services",
+            "Architect high-concurrency Node.js and TypeScript backends",
+            "Collaborate with product and design teams to deliver high quality features"
+          ],
+          "requirements": [
+            {
+              "id": "r1",
+              "text": "5+ years experience with Node.js and TypeScript",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r2",
+              "text": "Strong knowledge of MongoDB database modeling and indexing",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r3",
+              "text": "Experience with web scraping, crawling, and API security",
+              "kind": "technical",
+              "priority": "must"
+            },
+            {
+              "id": "r4",
+              "text": "Cross-functional communication and technical leadership",
+              "kind": "behavioural",
+              "priority": "must"
+            },
+            {
+              "id": "r5",
+              "text": "Familiarity with React and Next.js frontend development",
+              "kind": "technical",
+              "priority": "nice"
+            },
+            {
+              "id": "r6",
+              "text": "Experience with Docker, CI/CD pipelines, and cloud deployments",
+              "kind": "domain",
+              "priority": "nice"
+            }
+          ]
+        },
+        "questions": [
+          {
+            "id": "q1",
+            "requirement_ids": [
+              "r1",
+              "r2"
+            ],
+            "category": "technical",
+            "prompt": "How would you design a rate-limiting middleware in Node.js for MongoDB write spikes?",
+            "answer_outline": "Discuss sliding window rate limiter, Redis/MongoDB token bucket, handling HTTP 429 backoff, and async processing.",
+            "difficulty": 3,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q2",
+            "requirement_ids": [
+              "r3"
+            ],
+            "category": "technical",
+            "prompt": "What measures do you take to prevent SSRF vulnerabilities when crawling untrusted external URLs?",
+            "answer_outline": "Validate URL protocols, reject internal IPv4/IPv6 ranges (10.0.0.0/8, 127.0.0.0/8, 172.16.0.0/12, 192.168.0.0/16), block metadata endpoints, and enforce DNS resolution checks.",
+            "difficulty": 2,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q3",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "behavioural",
+            "prompt": "Describe a situation where you had to resolve a technical disagreement between engineering and product teams.",
+            "answer_outline": "Use STAR method: explain context, conflicting priorities, how data-driven trade-off analysis was presented, and agreed resolution.",
+            "difficulty": 2,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q4",
+            "requirement_ids": [
+              "r1",
+              "r2",
+              "r6"
+            ],
+            "category": "system-design",
+            "prompt": "Design an asynchronous distributed background job processor for long-running AI kit generations.",
+            "answer_outline": "Cover job queue architecture, message broker (RabbitMQ/Redis/BullMQ), idempotency, worker pool scaling, status polling, and exponential backoff retry mechanisms.",
+            "difficulty": 3,
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "q5",
+            "requirement_ids": [
+              "r4"
+            ],
+            "category": "company-fit",
+            "prompt": "Why are you interested in joining our engineering team and how do you align with our technical culture?",
+            "answer_outline": "Express alignment with engineering practices, customer focus, continuous learning mindset, and contribution to technical roadmap.",
+            "difficulty": 1,
+            "origin": "generated",
+            "pinned": false
+          }
+        ],
+        "flashcards": [
+          {
+            "id": "f1",
+            "front": "What is SSRF and how do you prevent it in automated crawlers?",
+            "back": "Server-Side Request Forgery occurs when an application fetches remote resources without validating the destination. Prevent it by restricting protocols (HTTP/HTTPS), validating target IPs against private network CIDR blocks, blocking loopback addresses, and using standard timeouts.",
+            "requirement_ids": [
+              "r3"
+            ],
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "f2",
+            "front": "How do compound indexes optimize MongoDB queries?",
+            "back": "Compound indexes support queries that match multiple fields. Field order matters according to the Equality, Sort, Range (ESR) rule to maximize index selectivity and avoid in-memory sorting.",
+            "requirement_ids": [
+              "r2"
+            ],
+            "origin": "generated",
+            "pinned": false
+          },
+          {
+            "id": "f3",
+            "front": "What is the STAR method for behavioural interview questions?",
+            "back": "STAR stands for Situation (context), Task (responsibility), Action (specific steps you took), and Result (quantifiable outcome and learning).",
+            "requirement_ids": [
+              "r4"
+            ],
+            "origin": "generated",
+            "pinned": false
+          }
+        ],
+        "schedule": {
+          "days_available": 7,
+          "days": [
+            {
+              "day": 1,
+              "focus": "Day 1: System Design",
+              "question_ids": [
+                "q4"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 2,
+              "focus": "Day 2: Technical Depth",
+              "question_ids": [
+                "q1"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 3,
+              "focus": "Day 3: Technical Depth",
+              "question_ids": [
+                "q2"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 4,
+              "focus": "Day 4: Behavioural & STAR",
+              "question_ids": [
+                "q3"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 5,
+              "focus": "Day 5: Company Fit",
+              "question_ids": [
+                "q5"
+              ],
+              "minutes": 45
+            },
+            {
+              "day": 6,
+              "focus": "Day 6: General Interview Prep",
+              "question_ids": [],
+              "minutes": 30
+            },
+            {
+              "day": 7,
+              "focus": "Day 7: General Interview Prep",
+              "question_ids": [],
+              "minutes": 30
+            }
+          ]
+        },
+        "coverage": {
+          "uncovered_requirement_ids": [],
+          "passes": 1
+        }
+      },
+      "error": null
+    }
+  ]
+}

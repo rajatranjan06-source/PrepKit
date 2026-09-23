@@ -1,0 +1,14 @@
+[
+  {
+    "id": "case-01",
+    "jd": "Senior Backend Engineer (Node.js & MongoDB)\nWe are looking for a Senior Backend Engineer to architect microservices, optimize MongoDB query performance, and lead technical security practices including web crawling and SSRF prevention.",
+    "company_url": "https://example.com/acme",
+    "days": 5
+  },
+  {
+    "id": "case-02",
+    "jd": "Full Stack Developer\nRequirements:\n- 3+ years experience with React, Next.js, and TypeScript.\n- Experience building accessible UI components and REST APIs.\n- Strong collaboration skills.",
+    "company_url": "https://example.com/techcorp",
+    "days": 7
+  }
+]

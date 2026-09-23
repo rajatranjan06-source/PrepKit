@@ -1,0 +1,1 @@
+import { crawlWebsite } from "./src/services/crawler.js"; crawlWebsite("https://example.com").then(r => console.log("Pages:", r.pages.length, "Failed:", r.failedUrls.length)).catch(e => console.log("Error:", e.message));

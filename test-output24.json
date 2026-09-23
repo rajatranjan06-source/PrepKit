@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "generated_at": "2026-09-22T22:51:47.299Z",
+  "kits": [
+    {
+      "id": "case-01",
+      "status": "failed",
+      "kit": null,
+      "error": {
+        "code": "GENERATION_FAILED",
+        "message": "fetch failed"
+      }
+    },
+    {
+      "id": "case-02",
+      "status": "failed",
+      "kit": null,
+      "error": {
+        "code": "GENERATION_FAILED",
+        "message": "fetch failed"
+      }
+    }
+  ]
+}
