@@ -25,7 +25,7 @@ export async function POST(req: Request) {
     };
 
     await saveUserToDb(user);
-    const token = generateToken(userId);
+    const token = generateToken({ userId: user.id, email: user.email, name: user.name });
 
     const response = NextResponse.json({
       success: true,
