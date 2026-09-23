@@ -146,6 +146,9 @@ export async function getUserByEmail(email: string): Promise<any | null> {
 }
 
 export async function getUserById(id: string): Promise<any | null> {
+  if (id === 'demo_user') {
+    return { id: 'demo_user', email: 'demo@prepkit.com', name: 'Demo User' };
+  }
   const database = await connectToDatabase();
   if (database) {
     return await database.collection('users').findOne({ id });

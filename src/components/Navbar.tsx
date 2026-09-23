@@ -12,7 +12,11 @@ export default function Navbar() {
   const pathname = usePathname();
 
   useEffect(() => {
-    fetch('/api/auth/me')
+    const token = typeof window !== 'undefined' ? localStorage.getItem('prepkit_token') : null;
+    const headers: Record<string, string> = {};
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    fetch('/api/auth/me', { headers })
       .then(res => res.json())
       .then(data => {
         if (data.authenticated) {
@@ -25,6 +29,9 @@ export default function Navbar() {
   }, [pathname]);
 
   const handleLogout = async () => {
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('prepkit_token');
+    }
     await fetch('/api/auth/logout', { method: 'POST' });
     setUser(null);
     router.push('/login');

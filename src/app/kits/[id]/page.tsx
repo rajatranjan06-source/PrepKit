@@ -33,7 +33,11 @@ export default function KitDetailPage({ params }: { params: { id: string } }) {
 
   // Load Kit Data
   useEffect(() => {
-    fetch(`/api/kits/${params.id}`)
+    const token = typeof window !== 'undefined' ? localStorage.getItem('prepkit_token') : null;
+    const headers: Record<string, string> = {};
+    if (token) headers['Authorization'] = `Bearer ${token}`;
+
+    fetch(`/api/kits/${params.id}`, { headers })
       .then(res => {
         if (res.status === 401) router.push('/login');
         return res.json();

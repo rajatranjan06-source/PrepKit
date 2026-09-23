@@ -29,6 +29,10 @@ export default function LoginPage() {
         throw new Error(data.error || 'Login failed');
       }
 
+      if (data.token) {
+        localStorage.setItem('prepkit_token', data.token);
+      }
+
       router.push('/dashboard');
     } catch (err: any) {
       setError(err.message);

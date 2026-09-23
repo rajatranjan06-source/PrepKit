@@ -30,6 +30,10 @@ export default function RegisterPage() {
         throw new Error(data.error || 'Registration failed');
       }
 
+      if (data.token) {
+        localStorage.setItem('prepkit_token', data.token);
+      }
+
       router.push('/dashboard');
     } catch (err: any) {
       setError(err.message);
